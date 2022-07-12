@@ -1,15 +1,13 @@
-const inputs = document.querySelectorAll(".otp-field input");
-inputs.forEarch((input, index) => {
-    input.dataset.index = index;
-    input.addEventListener("paste", handleOnPasteOtp);
-    input.addEventListener("keyup", handleOtp);
-});
+const boxes = document.querySelectorAll(".box");
 
-function handleOnPasteOtp(e) {
-    const data = e.clipboardData.getData("text");
-    const value = data.split("");
-    if (value.length == inputs.length) {
-        inputs.forEach((input, index) => (input.value = value[index]));
-        Submit();
-    }
-}
+const checkBoxes = () => {
+    const triggerBottom = (window.innerHeight / 5) * 4;
+    boxes.forEach((box) => {
+        constboxTop = box.getBoundingClientRect().top;
+        if (boxTop < triggerBottom) box.classList.add("show");
+        else box.classList.remove("show");
+    });
+};
+
+window.addEventListener("scroll", checkBoxes);
+checkBoxes()

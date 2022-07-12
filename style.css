@@ -1,32 +1,49 @@
 @charset "UTF-8";
 
-.otp-field{
+@import url("https://fonts.googleapis.com/css?family=Roboto:wght@400;700&display=swap");
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #efedd6;
+    font-family: "Roboto", sans-serif;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    overflow-x: hidden;
 }
 
-.otp-field input{
-    width: 37px;
-    font-size: 18px;
-    padding: 10px;
-    text-align: center;
-    border-radius: 5px;
-    margin: 4px;
-    border: 2px solid rgb(255, 255, 255, .2);
-    background: rgb(100, 100, 100, .2);
+h1{
+    margin: 10px;
+}
+
+.box{
+    background-color: #9535f0;
     color: #fff;
-    outline: none;
-    transition: all 0.1s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 700px;
+    height: 200px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 3px 12px #9535f0;
+    transform: translateX(400%);
+    transition: transform 0.8s ease;
 }
 
-.otp-field input:focus{
-    border: 2px solid #a527ff6a;
-    box-shadow: 0 0 2px 2px #a527ff6a;
+.box:nth-of-type(even) {
+    transform: translateX(-400%);
 }
 
-.disabled{
-    opacity: 0.5;
+.box.show{
+    transform: translateX(0);
 }
 
-.space{
-    margin-right: 1rem !important;
+.box h2{
+    font-size: 45px;
 }
