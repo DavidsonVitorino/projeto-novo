@@ -1,14 +1,14 @@
 const inputs = document.querySelectorAll(".otp-field input");
 inputs.forEarch((input, index) => {
     input.dataset.index = index;
-    input.addEventListener("paste", handlenOnPasteOtp);
+    input.addEventListener("paste", handleOnPasteOtp);
     input.addEventListener("keyup", handleOtp);
 });
 
-function handlenOnPasteOtp(e) {
+function handleOnPasteOtp(e) {
     const data = e.clipboardData.getData("text");
     const value = data.split("");
-    if (value.length) {
+    if (value.length == inputs.length) {
         inputs.forEach((input, index) => (input.value = value[index]));
         Submit();
     }
