@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+.opt-field{
+    display: flex;
+}
+
+.opt-field input{
+    width: 37px;
+    font-size: 18px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    
+}
